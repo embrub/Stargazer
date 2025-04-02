@@ -1,4 +1,4 @@
-Skygazing Conditions app 
+Stargazing Conditions app 
 ===
 
 ## Table of Contents
@@ -20,7 +20,7 @@ This app fetches data from astronomy and weather APIs for the current day or wee
 - **Category:** Educational
 - **Story:** Pull up the app to check for ideal conditions to spot celestial bodies in the sky. 
 - **Market:** This app is for anyone with a telescope or any casual stargazers who want a summary for the most ideal conditions to practice their hobby.
-- **Habit:** A single interface to see *everything* relating to skygazing instead of needing to swap between weather and astronomy sites.
+- **Habit:** A single interface to see *everything* relating to stargazing instead of needing to swap between weather and astronomy sites.
 - **Scope:** V1 only consists of basic interfaces, being able to swap between different pages. All styling and UX/UI should be done at this point. V2 implements basic weather information for the week (cloud coverage, sundown times, light pollution) on the landing page. By clicking one day, the user is redirected to another page to view elaborated weather info and astronomy info. V3 expands on the astronomy API, adding the ability to return astral body data for each day (degrees of bodies, setting/rising times, altitude). This data should update with the weather API. V4 should allow for data to be updated depending on what location the user chooses from.
 
 ## Product Spec

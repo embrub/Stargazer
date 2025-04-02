@@ -4,7 +4,7 @@ Mobile App Dev - App Brainstorming
 ## New App Ideas - List
 1. Sleep debt calculator
     * Users can log how much sleep they've had for each day of the month. The app calculates the user's monthly/weekly hours of sleep and reccomends a sleep schedule based on their input.
-2. Skygazing conditions app
+2. Stargazing conditions app
     * Fetch data from astronomy and weather APIs and return them. Shows the day's conditions in the sky (clouds, light pollution) and also the brightest/most visible stars and astral bodies. Can see ahead into the week to see the most ideal days to take out your telescope. Can change viewing location. 
     * **Possible APIs to pull from:**
         * https://www.weatherapi.com/api.aspx
@@ -36,7 +36,7 @@ Mobile App Dev - App Brainstorming
    - **Mobile:** A user has quick access to an interface to view the sky's conditions, even while outside.
    - **Story:** Pull up the app to check for most ideal setting and time to spot celestial bodies in the sky. 
    - **Market:** Anyone with a telescope or hobbyist stargazers who want a summary for the most ideal conditions to practice their hobby.
-   - **Habit:** A single interface to see *everything* relating to skygazing instead of needing to swap between weather apps and astronomy apps.
+   - **Habit:** A single interface to see *everything* relating to stargazing instead of needing to swap between weather apps and astronomy apps.
    - **Scope:** V1 only consists of basic interfaces, being able to swap between views. The landing screen should have basic weather information (cloud coverage, sundown times, light pollution). V3 integrates the astronomy API, adding the ability to display astral body data (degrees, setting/rising times, altitude for planets). This data should update consistently with the weather API. V4 should allow for data to be updated depending on what location the user chooses from.
 2. Sleep debt calculator
    - **Description**: Users can log how much sleep they've had for each day of the month. The app calculates the user's monthly/weekly hours of sleep and reccomends a sleep schedule based on their input.
