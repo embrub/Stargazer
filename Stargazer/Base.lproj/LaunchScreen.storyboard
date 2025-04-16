@@ -22,11 +22,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="OSI-Sr-Q5K">
+                                <rect key="frame" x="188" y="443" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="OSI-Sr-Q5K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="188" id="3wa-nW-7fu"/>
                             <constraint firstItem="3fM-oX-awz" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Gy0-Bm-E2x"/>
+                            <constraint firstItem="OSI-Sr-Q5K" firstAttribute="top" secondItem="3fM-oX-awz" secondAttribute="bottom" constant="6.3333333333333144" id="mjw-Yn-eBQ"/>
+                            <constraint firstItem="OSI-Sr-Q5K" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="n1m-6D-Poh"/>
                             <constraint firstItem="3fM-oX-awz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="n1w-Kx-m9q"/>
                         </constraints>
                     </view>
