@@ -12,7 +12,7 @@ Stargazing Conditions app
 
 ### Description
 
-This app fetches data from astronomy and weather APIs for the current day or week and returns them, combining everything that a stargazer needs to watch for before choosing a day to go out. Shows the clarity of the sky for the day (clouds, light pollution) and also the brightest/most visible stars and astral bodies. Can choose between different days of the week and viewing locations. 
+This app fetches data from astronomy and weather APIs from for the current day or week and returns them, combining everything that a stargazer needs to watch for before choosing a day to go out. Shows the clarity of the sky for the day (clouds, light pollution) and also the brightest/most visible stars and astral bodies. Can choose between different days of the week and viewing locations. 
 
 ### App Evaluation
 
@@ -21,7 +21,7 @@ This app fetches data from astronomy and weather APIs for the current day or wee
 - **Story:** Pull up the app to check for ideal conditions to spot celestial bodies in the sky. 
 - **Market:** This app is for anyone with a telescope or any casual stargazers who want a summary for the most ideal conditions to practice their hobby.
 - **Habit:** A single interface to see *everything* relating to stargazing instead of needing to swap between weather and astronomy sites.
-- **Scope:** V1 only consists of basic interfaces, being able to swap between different pages. All styling and UX/UI should be done at this point. V2 implements basic weather information for the week (cloud coverage, sundown times, light pollution) on the landing page. By clicking one day, the user is redirected to another page to view elaborated weather info and astronomy info. V3 expands on the astronomy API, adding the ability to return astral body data for each day (degrees of bodies, setting/rising times, altitude). This data should update with the weather API. V4 should allow for data to be updated depending on what location the user chooses from.
+- **Scope:** V1 only consists of basic interfaces, being able to swap between different pages. All styling and UX/UI should be done at this point. V2 implements basic weather information for the week (cloud coverage, sundown times, light pollution) on the landing page. By switching tabs, the user is redirected to another page to view elaborated astronomy info. V3 expands on the afforementioned page, adding the ability to return astral body data for the day. This data should update with the weather API.
 
 ## Product Spec
 
@@ -29,10 +29,9 @@ This app fetches data from astronomy and weather APIs for the current day or wee
 
 **Required Must-have Stories**
 
-1. Weather data and brief astronomy data on the front page (cloud coverage, sundown times, temperature, light pollution).
-2. After choosing a day, detailed astronomy is returned (degrees of bodies, setting/rising times, altitude of bodies).
-3. User can scrub through days of the week and see information for those days.
-4. Data updates in real time after a select time interval.
+1. Weather data and brief astronomy data on the front page (cloud coverage, temperature,etc).
+2. Detailed astronomy data is returned (degrees of bodies, setting/rising times, altitude of bodies).
+4. Data updates in real time.
 
 **Optional Nice-to-have Stories**
 
@@ -40,13 +39,12 @@ This app fetches data from astronomy and weather APIs for the current day or wee
 
 ### 2. Screen Archetypes
 
-- [ ] Landing page
+- [x] Landing page
     * Displays brief weekly forecast
     * (Optional) Button to access location change
-- [ ] Day details
-    - [ ] Altitude graph (astral body visibility)
-    - [ ] Extended weather
-    - [ ] Constellation view
+- [x] Day details
+    - [x] Altitude graph (astral body visibility)
+    - [x] Events list
 
 ### 3. Navigation
 
@@ -57,32 +55,70 @@ This app fetches data from astronomy and weather APIs for the current day or wee
 
 **Flow Navigation** (Screen to Screen)
 
-- [ ] Landing page
-* => Day details
-- [ ] Day details
-* => Altitude graph (astral body visibility)
-* => Extended weather
-* => Constellation view
-* => Landing page
+- [x] Landing page
+    * => Day details
+- [x] Day details
+    * => Altitude graph (astral body visibility)
+    * => Events view
+    * => Landing page
 
-## Wireframes
+## Wireframe
 
-<img src="https://github.com/embrub/stargazing-conditions/blob/a6fd542100e5c464238604e84fa866e48d62f957/IMG_2497.jpg" width=710>
+<img src="https://github.com/embrub/stargazing-conditions/blob/Misc/wireframe.jpg" width=710>
 
-### [BONUS] Digital Wireframes & Mockups
+## Sprint 1
+(April 1-5)
+<img src="https://github.com/embrub/stargazing-conditions/blob/Misc/sprint1.jpg" width=710>
+* tab navigation & navigation bar integrated
+* UI for weather page done
+* first git push
 
-### [BONUS] Interactive Prototype
- 
-## Schema 
+## Sprint 2
+(April 6-12)
+Neglected to take a video, but these were the following changes:
+* completed "weather" page and integrated API with it
+* completed UI and API fetching for "events" page.
+* completed UI for "celestial" page
+* add event to calendar function
 
-[This section will be completed in Unit 9]
+## Sprint 3
+<img src="https://github.com/embrub/Stargazer/blob/e84789961094ce02cad6a9bbb74b52354a1e5991/Misc/final.gif" width=710>
+(April 13-16)
+* API integration into "celestial" page, line graph is rendered properly
+* hide/unhide line functions
+* final git push
 
-### Models
+## Models
 
-[Add table of models]
-
+### LocationDate
+A shared class which allows the user's coordinates to be passed between Views. 
+* ```shared```: default LocationDate() declaration
+* ```longitude```: represents the longitude from  LocationDate()
+* ```latitude```represents the latitude from  LocationDate()
+### AltitudeData
+This structure represents a celestial object and its altitude in the sky at a specific point in time. 
+* ```hour```: hour coresponding to the data point
+* ```altitude```: altitude of the celestial object
+* ```object```: name of the celestial object
+### Forecast
+Represents the sky conditions for the day. Utilizes Decodable & CodingKeys to conform fetched API data to the struct format. 
+* ```timepoint```: represents the hour correlating to the fetched data
+* ```cloudcover```: cloud cover during the hour
+* ```seeing```: atmospheric seeing (how much the light from an astral body will scatter due to the atmosphere)
+* ```transparency```: atmospheric transparency (the clarity of the atmosphere)
+* ```liftedIndex```: atmospheric instability (the stability of the weather conditions)
+* ```rh2m```: relative humidity
+* ```temp2m```: temperature
+* ```precType```: percipitation type
+### Event
+Struct to format all astronomical events. It conforms to Codable protocols.
+* ```date```: month and day of the event
+* ```title```: title of the event
+* ```content```: event description
+* ```image```: image url (unused)
 ### Networking
 
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+#### APIs Used:
+* 7Timer astro data (astro weather) - https://7timer.info/index.php?product=astro&lon=14.398&lat=47.911&lang=en&ac=0&unit=metric&tzshift=0&site=
+* Astronomyapi (planet altitudes) - https://api.astronomyapi.com/api/v2/bodies/positions
+* Rapidapi astronomy calendar (events) - https://rapidapi.com/sharmadhirajnp2/api/astronomy-calendar
