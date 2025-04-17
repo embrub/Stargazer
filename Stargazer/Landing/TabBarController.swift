@@ -1,10 +1,3 @@
-//
-//  EventsControllerViewController.swift
-//  Stargazer
-//
-//  Created by emi n on 4/12/25.
-//
-
 import UIKit
 
 class TabBarController: UITabBarController {

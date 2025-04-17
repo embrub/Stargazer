@@ -95,7 +95,7 @@ class CelestialController: UIViewController {
     }
 
     private func fetchAllData() {
-        let hours = (17...23).map { String(format: "%02d:00:00", $0) } +
+        let hours = (0...23).map { String(format: "%02d:00:00", $0) } +
                     (0...5).map  { String(format: "%02d:00:00", $0) }
 
         CelestialDataFetcher.fetchCelestialDataForHours(hours) { data in

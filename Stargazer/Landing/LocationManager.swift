@@ -1,10 +1,3 @@
-//
-//  LocationManager.swift
-//  Stargazer
-//
-//  Created by emi n on 4/14/25.
-//
-
 import Foundation
 import CoreLocation
 

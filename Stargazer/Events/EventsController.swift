@@ -33,9 +33,7 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         fetchEvents()
 
     }
-    
-    // MARK: - Table View
-    
+        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("Returning \(events.count) rows")
         return events.count
@@ -64,17 +62,6 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
-        // configure for iPad
-        if let popover = alert.popoverPresentationController {
-            if let cell = tableView.cellForRow(at: indexPath) {
-                popover.sourceView = cell
-                popover.sourceRect = cell.bounds
-            } else {
-                popover.sourceView = view
-                popover.sourceRect = CGRect(x: view.bounds.midX, y: view.bounds.midY, width: 0, height: 0)
-            }
-        }
-        
         present(alert, animated: true)
     }
     
@@ -87,12 +74,10 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         let requestAccess: (_ completion: @escaping (Bool, Error?) -> Void) -> Void = { completion in
             if #available(iOS 17.0, *) {
-                // for adding events only, write‑only access is sufficient
                 eventStore.requestWriteOnlyAccessToEvents { granted, error in
                     completion(granted, error)
                 }
             } else {
-                // prior to iOS 17
                 eventStore.requestAccess(to: .event) { granted, error in
                     completion(granted, error)
                 }
@@ -106,7 +91,7 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
             }
             
             let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd" // adjust if your API format changes
+            formatter.dateFormat = "yyyy-MM-dd"
             guard let startDate = formatter.date(from: dateString) else {
                 print("Invalid date format: \(dateString)")
                 return
@@ -160,8 +145,8 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
                 self?.events = decoded
                 
                 DispatchQueue.main.async {
-                    print("tableView is nil: \(self?.tableView == nil)")
-                    print("Fetched \(self?.events.count ?? 0) events")
+//                    print("tableView is nil: \(self?.tableView == nil)")
+//                    print("Fetched \(self?.events.count ?? 0) events")
                     self?.tableView.reloadData()
                 }
             } catch {

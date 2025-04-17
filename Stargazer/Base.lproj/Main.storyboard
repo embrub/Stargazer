@@ -24,22 +24,6 @@
             </objects>
             <point key="canvasLocation" x="1063" y="-149"/>
         </scene>
-        <!--Sky-->
-        <scene sceneID="BJv-dD-Yck">
-            <objects>
-                <viewController id="QQB-LF-RGE" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Zm9-MN-YTi">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="kfh-7X-bDb"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Sky" id="SKc-o5-ate"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pfU-cj-0PJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1863.3587786259541" y="-727.46478873239437"/>
-        </scene>
         <!--Celestial-->
         <scene sceneID="oqv-Yl-Cmx">
             <objects>
@@ -129,7 +113,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="iUy-6e-DCV" kind="relationship" relationship="viewControllers" id="CkT-y4-NRv"/>
-                        <segue destination="QQB-LF-RGE" kind="relationship" relationship="viewControllers" id="hWb-f2-LND"/>
                         <segue destination="zcJ-Dp-Eub" kind="relationship" relationship="viewControllers" id="X6e-6e-0nY"/>
                         <segue destination="ph5-Xi-Oit" kind="relationship" relationship="viewControllers" id="3S7-MM-CCj"/>
                     </connections>

@@ -1,10 +1,3 @@
-//
-//  CelestialCell.swift
-//  Stargazer
-//
-//  Created by emi n on 4/14/25.
-//
-
 import UIKit
 
 class CelestialCell: UITableViewCell {

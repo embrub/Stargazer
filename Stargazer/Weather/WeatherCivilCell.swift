@@ -1,10 +1,3 @@
-//
-//  WeatherCivilCell.swift
-//  Stargazer
-//
-//  Created by emi n on 4/13/25.
-//
-
 import UIKit
 
 class WeatherCivilCell: UITableViewCell {

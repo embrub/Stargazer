@@ -73,7 +73,6 @@ class CelestialDataFetcher {
                 let decoded = try JSONDecoder().decode(APIResponse.self, from: data)
                 var result: [AltitudeData] = []
 
-                // formatters for time parsing
                 let isoParser = ISO8601DateFormatter()
                 isoParser.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
                 let hourFormatter = DateFormatter()
