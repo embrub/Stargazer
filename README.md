@@ -64,7 +64,7 @@ This app fetches data from astronomy and weather APIs from for the current day o
 <img src="https://github.com/embrub/Stargazer/blob/5570a1ca18ea07beb4313b8132271f0722c48a85/Misc/wireframe.jpg" width=710>
 
 ## Sprint 1
-<img src="https://github.com/embrub/Stargazer/blob/main/Misc/final.gif" width=710>
+<img src="https://github.com/embrub/Stargazer/blob/f1b0562aded43f9ff3e254e26a5d44dfd104f79d/Misc/sprint1.gif" width=710>
 (April 1-5)
 * switch to hard-coding pages in UIkit instead of Storyboard (following tutorials from Mitchell Hudson, iOS Academy, CodeBrah)
 * tab navigation & navigation bar integrated
