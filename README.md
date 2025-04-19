@@ -11,12 +11,9 @@ Stargazing Conditions app
 ## Overview
 
 ### Description
-
 This app fetches data from astronomy and weather APIs from for the current day or week and returns them, combining everything that a stargazer needs to watch for before choosing a day to go out. Shows the clarity of the sky for the day (clouds, light pollution) and also the brightest/most visible stars and astral bodies. Can choose between different days of the week and viewing locations. 
 
 ### App Evaluation
-
-[Evaluation of your app across the following attributes]
 - **Category:** Educational
 - **Story:** Pull up the app to check for ideal conditions to spot celestial bodies in the sky. 
 - **Market:** This app is for anyone with a telescope or any casual stargazers who want a summary for the most ideal conditions to practice their hobby.
@@ -64,29 +61,32 @@ This app fetches data from astronomy and weather APIs from for the current day o
 
 ## Wireframe
 
-<img src="https://github.com/embrub/stargazing-conditions/blob/Misc/wireframe.jpg" width=710>
+<img src="https://github.com/embrub/Stargazer/blob/5570a1ca18ea07beb4313b8132271f0722c48a85/Misc/wireframe.jpg" width=710>
 
 ## Sprint 1
+<img src="https://github.com/embrub/Stargazer/blob/main/Misc/final.gif" width=710>
 (April 1-5)
-<img src="https://github.com/embrub/stargazing-conditions/blob/Misc/sprint1.jpg" width=710>
+* switch to hard-coding pages in UIkit instead of Storyboard (following tutorials from Mitchell Hudson, iOS Academy, CodeBrah)
 * tab navigation & navigation bar integrated
 * UI for weather page done
-* first git push
+* fetch user coordinates successfully
 
 ## Sprint 2
 (April 6-12)
-Neglected to take a video, but these were the following changes:
-* completed "weather" page and integrated API with it
+Forgot to push to github, but these were the following changes:
+* created landing page to ask location permissions.
+* integrated API with the "weather" page.
 * completed UI and API fetching for "events" page.
-* completed UI for "celestial" page
-* add event to calendar function
+* "add event to calendar" functionality to "events" page
+* completed UI for "celestial" page (following tutorials from Karin Prater, Swiftful Thinking)
 
 ## Sprint 3
 <img src="https://github.com/embrub/Stargazer/blob/e84789961094ce02cad6a9bbb74b52354a1e5991/Misc/final.gif" width=710>
+
 (April 13-16)
-* API integration into "celestial" page, line graph is rendered properly
+* API integration into "celestials" page, line graph is rendered properly
 * hide/unhide line functions
-* final git push
+* calculate good, OK, bad conditions for the "weather" page
 
 ## Models
 
@@ -104,12 +104,12 @@ This structure represents a celestial object and its altitude in the sky at a sp
 Represents the sky conditions for the day. Utilizes Decodable & CodingKeys to conform fetched API data to the struct format. 
 * ```timepoint```: represents the hour correlating to the fetched data
 * ```cloudcover```: cloud cover during the hour
-* ```seeing```: atmospheric seeing (how much the light from an astral body will scatter due to the atmosphere)
-* ```transparency```: atmospheric transparency (the clarity of the atmosphere)
-* ```liftedIndex```: atmospheric instability (the stability of the weather conditions)
-* ```rh2m```: relative humidity
-* ```temp2m```: temperature
-* ```precType```: percipitation type
+* ```seeing```: atmospheric seeing (level of light scattering of an astral body due to the atmosphere)
+* ```transparency```: atmospheric transparency (the current clarity of the atmosphere)
+* ```liftedIndex```: atmospheric instability (the stability of the current weather conditions)
+* ```rh2m```: relative humidity during the hour
+* ```temp2m```: temperature during the hour
+* ```precType```: percipitation type during the hour
 ### Event
 Struct to format all astronomical events. It conforms to Codable protocols.
 * ```date```: month and day of the event
@@ -119,6 +119,9 @@ Struct to format all astronomical events. It conforms to Codable protocols.
 ### Networking
 
 #### APIs Used:
-* 7Timer astro data (astro weather) - https://7timer.info/index.php?product=astro&lon=14.398&lat=47.911&lang=en&ac=0&unit=metric&tzshift=0&site=
-* Astronomyapi (planet altitudes) - https://api.astronomyapi.com/api/v2/bodies/positions
-* Rapidapi astronomy calendar (events) - https://rapidapi.com/sharmadhirajnp2/api/astronomy-calendar
+* 7Timer astro data (astro weather)
+    * https://7timer.info/index.php?product=astro&lon=14.398&lat=47.911&lang=en&ac=0&unit=metric&tzshift=0&site=
+* AstronomyAPI (planet altitudes)
+    * https://api.astronomyapi.com/api/v2/bodies/positions
+* Rapidapi astronomy calendar (events)
+    * https://rapidapi.com/sharmadhirajnp2/api/astronomy-calendar
